@@ -1,51 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255; /* White text for contrast */
-  --background-start-rgb: 0, 0, 10; /* Midnight black with a hint of blue */
-  --background-end-rgb: 0, 0, 20;   /* Midnight black with a slightly more blue */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 10;
-    --background-end-rgb: 0, 0, 20;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 10;
+  --background-end-rgb: 0, 0, 20;
 }
 
 body {
+  font-family: 'Inter', sans-serif;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-          to bottom,
-          transparent,
-          rgb(var(--background-end-rgb))
-  )
-  rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .text-balance { text-wrap: balance; }
 }
 
+/* Animations */
 @keyframes textShine {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
 }
 
-.animate-text {
-  background-size: 200% auto;
-  animation: textShine 5s linear infinite;
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Animation classes */
+.animate-text { background-size: 200% auto; animation: textShine 5s linear infinite; }
+.animate-fadeInDown { animation: fadeInDown 1s ease-out; }
+.animate-fadeIn { animation: fadeIn 1s ease-out; }
+.animate-bounce { animation: bounce 2s infinite; }
+.float-animation { animation: float 3s ease-in-out infinite; }
+
+/* Navigation styles */
 .nav-link {
   position: relative;
   color: #fff;
@@ -75,4 +87,23 @@ body {
 .nav-link:hover {
   color: #4fd1c5;
   text-shadow: 0 0 8px rgba(79, 209, 197, 0.8);
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(45deg, #4fd1c5, #4299e1, #7e3af2);
+}
+
+.bg-gradient-radial {
+  background-image: radial-gradient(circle, rgba(29, 78, 216, 0.15) 0%, rgba(30, 64, 175, 0.05) 100%);
 }
