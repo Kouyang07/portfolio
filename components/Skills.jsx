@@ -54,21 +54,44 @@ const Skills = () => {
         }
     }, [controls, inView]);
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.3,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                damping: 12,
+                stiffness: 100,
+            },
+        },
+    };
+
     return (
         <section ref={ref} className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-gray-900 to-black">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 opacity-30 z-0"></div>
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmMDUiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzRmZDFjNTIwIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-5 z-10"></div>
 
-            <div className="max-w-7xl mx-auto relative z-20">
+            <motion.div
+                className="max-w-7xl mx-auto relative z-20"
+                variants={containerVariants}
+                initial="hidden"
+                animate={controls}
+            >
                 <motion.div
                     className="mb-20 text-center"
-                    initial="hidden"
-                    animate={controls}
-                    variants={{
-                        visible: { opacity: 1, y: 0 },
-                        hidden: { opacity: 0, y: -50 }
-                    }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    variants={itemVariants}
                 >
                     <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-4">
                         Technical Proficiencies
@@ -78,24 +101,25 @@ const Skills = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+                    variants={containerVariants}
+                >
                     {skillCategories.map((category, categoryIndex) => (
                         <motion.div
                             key={category.name}
-                            initial="hidden"
-                            animate={controls}
-                            variants={{
-                                visible: { opacity: 1, y: 0 },
-                                hidden: { opacity: 0, y: 50 }
-                            }}
-                            transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+                            variants={itemVariants}
                             className="glassmorphism p-6 shadow-lg"
                         >
                             <h3 className="text-2xl font-semibold mb-6 text-teal-400">{category.name}</h3>
-                            <div className="space-y-4">
+                            <motion.div
+                                className="space-y-4"
+                                variants={containerVariants}
+                            >
                                 {category.skills.map((skill, skillIndex) => (
                                     <motion.div
                                         key={skill.name}
+                                        variants={itemVariants}
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
@@ -106,22 +130,24 @@ const Skills = () => {
                                             className="group block p-4 bg-gray-800 bg-opacity-50 rounded-lg border border-gray-700 transition-all duration-300 hover:bg-gray-700 hover:border-teal-400"
                                         >
                                             <div className="flex items-center">
-                                                <div
+                                                <motion.div
                                                     className="w-10 h-10 mr-4 rounded-full flex items-center justify-center text-xl bg-opacity-80 transition-all duration-300 group-hover:scale-110"
                                                     style={{ backgroundColor: skill.color }}
+                                                    whileHover={{ rotate: 360 }}
+                                                    transition={{ duration: 0.5 }}
                                                 >
                                                     {React.createElement(skill.icon, { color: '#ffffff' })}
-                                                </div>
+                                                </motion.div>
                                                 <h4 className="text-lg font-medium group-hover:text-teal-300 transition-colors duration-300">{skill.name}</h4>
                                             </div>
                                         </a>
                                     </motion.div>
                                 ))}
-                            </div>
+                            </motion.div>
                         </motion.div>
                     ))}
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     );
 };
