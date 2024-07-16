@@ -39,7 +39,7 @@ const currentProjects = [
 const projects = [
     {
         name: "CSFlipper",
-        image: "/projects/CSFLipper.png",
+        image: "/projects/CSFlipper.png",
         type: "Discord Bot",
         tech: ["Java", "JDA"],
         date: "2024-06-13",
