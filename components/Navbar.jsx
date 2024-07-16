@@ -1,8 +1,8 @@
 'use client'
 
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
-export default function Navbar(){
+export default function Navbar() {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
 
@@ -16,6 +16,7 @@ export default function Navbar(){
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [prevScrollPos]);
+
     return (
         <nav
             className={`bg-black bg-opacity-50 backdrop-filter backdrop-blur-xl border-b border-opacity-20 border-blue-500 fixed w-full z-50 transition-transform duration-300 ${
@@ -24,8 +25,9 @@ export default function Navbar(){
             <div className="container mx-auto px-4 py-3">
                 <div className="flex justify-between items-center">
                     <a href="#" className="text-2xl font-bold">
-                        <span
-                            className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-text">Kaicheng</span>
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 to-cyan-400 animate-text">
+                            Kaicheng
+                        </span>
                     </a>
                     <div className="hidden md:flex space-x-8">
                         <a href="#" className="nav-link">Home</a>
