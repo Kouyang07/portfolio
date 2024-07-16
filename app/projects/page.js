@@ -1,10 +1,40 @@
 // app/projects/page.js
 import ProjectCard from '../../components/ProjectCard';
+import CurrentProjectCard from "@/components/CurrentProjects";
 
 export const metadata = {
     title: 'Project Showcase | Kaicheng',
     description: 'Explore my portfolio of all sort of projects',
 };
+
+const currentProjects = [
+    {
+        name: "Personal Portfolio Website",
+        type: "Web Development",
+        tech: ["Next.js", "React", "Tailwind CSS"],
+        description: "Building and refining my personal portfolio website to showcase my projects and skills.",
+        github: "https://github.com/Kouyang07/portfolio"
+    },
+    {
+        name: "BSAFMV ML/Statistics Research",
+        type: "AI/ML",
+        tech: ["Python", "TensorFlow", "OpenCV"],
+        description: "Researching a method to statistically analyze the skill level of a badminton player from monocular video.",
+        github: "https://github.com/Kouyang07/BSAFMVy"
+    },
+    {
+        name: "Burble E-Commerce (Frontend)",
+        type: "Frontend",
+        tech: ["Next.js", "React", "Tailwind CSS", "Stripe", "Toastify"],
+        description: "Building the frontend for my clothing brand, burble.world."
+    },
+    {
+        name: "Burble E-Commerce (Backend)",
+        type: "Backend",
+        tech: ["Java", "Spring", "MongoDB", "REST API"],
+        description: "Building the backend for my clothing brand, burble.world."
+    }
+];
 
 const projects = [
     {
@@ -93,19 +123,37 @@ export default function ProjectsPage() {
     return (
         <main className="container mx-auto px-4 py-12 min-h-screen">
             <header className="text-center mb-12 mt-24">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gradient animate-text">
-                    Innovating Across Platforms
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-gradient animate-text" style={{
+                    lineHeight: '1.2',
+                    paddingBottom: '0.1em',
+                    marginBottom: '0.1em',
+                    display: 'inline-block',
+                    verticalAlign: 'bottom'
+                }}>
+                    Project Showcase
                 </h1>
                 <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                    From Web and Mobile Apps to Cutting-Edge Research Projects
+                    Some of the projects I've worked on in the past and currently working on.
                 </p>
-
             </header>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projects.map((project, index) => (
-                    <ProjectCard key={index} project={project} />
-                ))}
-            </div>
+
+            <section className="mb-16">
+                <h2 className="text-3xl font-semibold mb-6 text-white">Currently Working On</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {currentProjects.map((project, index) => (
+                        <CurrentProjectCard key={index} project={project}/>
+                    ))}
+                </div>
+            </section>
+
+            <section>
+                <h2 className="text-3xl font-semibold mb-6 text-white">Completed Projects</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {projects.map((project, index) => (
+                        <ProjectCard key={index} project={project} />
+                    ))}
+                </div>
+            </section>
         </main>
     );
 }
