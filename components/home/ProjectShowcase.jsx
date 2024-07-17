@@ -21,7 +21,7 @@ const projects = [
     },
     {
         id: 3,
-        title: 'Portfolio website',
+        title: 'Portfolio Website',
         description: 'This exact website you are viewing right now, built with Next.js and Tailwind CSS.',
         image: '/projects/portfolio.png',
         url: 'https://kouyang.dev/'
