@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Hero from "@/components/home/Hero";
 import Skills from "@/components/home/Skills";
+import ProjectShowcase from "@/components/home/ProjectShowcase";
 
 export default function Home() {
     const { scrollYProgress } = useScroll();
@@ -21,6 +22,7 @@ export default function Home() {
                 <Hero />
             </motion.div>
             <Skills />
+            <ProjectShowcase />
         </main>
     );
 }
