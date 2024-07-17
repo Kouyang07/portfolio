@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 export default function Navbar() {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,6 +17,10 @@ export default function Navbar() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [prevScrollPos]);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     return (
         <nav
@@ -35,7 +40,7 @@ export default function Navbar() {
                         <a href="#" className="nav-link">CV</a>
                         <a href="#" className="nav-link">Contact</a>
                     </div>
-                    <button className="md:hidden text-white focus:outline-none">
+                    <button onClick={toggleMenu} className="md:hidden text-white focus:outline-none">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                              xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -43,6 +48,14 @@ export default function Navbar() {
                         </svg>
                     </button>
                 </div>
+                {isMenuOpen && (
+                    <div className="md:hidden mt-4 text-right">
+                        <a href={"/"} className="block py-2 nav-link">Home</a>
+                        <a href={"/projects"} className="block py-2 nav-link">Projects</a>
+                        <a href="#" className="block py-2 nav-link">CV</a>
+                        <a href="#" className="block py-2 nav-link">Contact</a>
+                    </div>
+                )}
             </div>
         </nav>
     )
