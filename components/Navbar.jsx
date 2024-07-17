@@ -52,7 +52,7 @@ export default function Navbar() {
                     <div className="md:hidden mt-4 text-right">
                         <a href={"/"} className="block py-2 nav-link">Home</a>
                         <a href={"/projects"} className="block py-2 nav-link">Projects</a>
-                        <a href="#" className="block py-2 nav-link">CV</a>
+                        <a href={"/cv"} className="block py-2 nav-link">CV</a>
                         <a href="#" className="block py-2 nav-link">Contact</a>
                     </div>
                 )}
