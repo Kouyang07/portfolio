@@ -2,13 +2,24 @@
 
 'use client'
 
+import { useState, useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Hero from "@/components/Hero";
-import Skills from "@/components/Skills";
+import Skills from "@/components/skills/Skills";
 
 export default function Home() {
+    const { scrollYProgress } = useScroll();
+    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+    const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
+
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
-            <Hero />
+            <motion.div
+                style={{ opacity, scale }}
+                className="w-full"
+            >
+                <Hero />
+            </motion.div>
             <Skills />
         </main>
     );
