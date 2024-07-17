@@ -4,8 +4,8 @@
 
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Hero from "@/components/Hero";
-import Skills from "@/components/skills/Skills";
+import Hero from "@/components/home/Hero";
+import Skills from "@/components/home/Skills";
 
 export default function Home() {
     const { scrollYProgress } = useScroll();

@@ -1,4 +1,4 @@
-// components/CurrentProjectCard.js
+// components/CurrentProjectCard.jsx
 import Link from 'next/link';
 
 export default function CurrentProjectCard({ project }) {

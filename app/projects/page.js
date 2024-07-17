@@ -1,7 +1,7 @@
 // app/projects/page.js
 
 import React from 'react';
-import ProjectsPage from "@/components/ProjectsPage";
+import ProjectsPage from "@/components/projects/ProjectsPage";
 
 export const metadata = {
     title: 'Project Showcase | Kaicheng',
