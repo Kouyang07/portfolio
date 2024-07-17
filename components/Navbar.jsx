@@ -32,7 +32,7 @@ export default function Navbar() {
                     <div className="hidden md:flex space-x-8">
                         <a href={"/"} className="nav-link">Home</a>
                         <a href={"/projects"} className="nav-link">Projects</a>
-                        <a href="#" className="nav-link">About</a>
+                        <a href="#" className="nav-link">CV</a>
                         <a href="#" className="nav-link">Contact</a>
                     </div>
                     <button className="md:hidden text-white focus:outline-none">
