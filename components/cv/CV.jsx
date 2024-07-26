@@ -85,7 +85,7 @@ const CV = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <h1 className="text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                        <h1 className="text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mt-12">
                             KAICHENG OUYANG
                         </h1>
                         <p className="text-xl text-gray-300">Software Engineer</p>
