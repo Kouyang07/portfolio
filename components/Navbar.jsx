@@ -29,7 +29,7 @@ export default function Navbar() {
             }`}>
             <div className="container mx-auto px-4 py-3">
                 <div className="flex justify-between items-center">
-                    <a href="#" className="text-2xl font-bold">
+                    <a href={"/"} className="text-2xl font-bold">
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 to-cyan-400 animate-text">
                             Kaicheng
                         </span>
