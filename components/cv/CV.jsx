@@ -77,7 +77,7 @@ const CV = () => {
                 <meta name="description" content="Kaicheng Ouyang's CV - Passionate software engineer with expertise in Java, Python, and JavaScript. View projects, skills, and experience." />
                 <meta name="keywords" content="Kaicheng Ouyang, Software Engineer, Java, Python, JavaScript, React, AWS, CV" />
             </Head>
-            <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+            <div className="min-h-screen bg-black text-white">
                 <div className="max-w-6xl mx-auto px-4 py-12">
                     <motion.header
                         className="text-center mb-12"
@@ -95,19 +95,19 @@ const CV = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <div className="lg:col-span-2 space-y-8">
                             <FadeInWhenVisible>
-                                <section className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <section className="bg-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
                                     <h2 className="text-2xl font-semibold mb-4 text-blue-400">PROFILE</h2>
                                     <p className="text-gray-300">
-                                        Passionate software engineer with a drive for turning ideas into reality. Armed with expertise in Java, Python, and JavaScript,
-                                        I've crafted innovative solutions across various frameworks and cloud platforms. My determination and ambition drive me to
-                                        tackle complex challenges, while my perseverance ensures I always deliver results that exceed expectations.
+                                        I am a software engineer with a passion for turning ideas into reality. With my expertise in Java, Python, and JavaScript,
+                                        I've created many projects using a variety of tech. My determination and ambition drive me to
+                                        tackle complex challenges, while my perseverance ensures I always exceed expectations.
                                     </p>
                                 </section>
                             </FadeInWhenVisible>
 
                             <FadeInWhenVisible>
-                                <section className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                    <h2 className="text-2xl font-semibold mb-4 text-blue-400">PROJECTS</h2>
+                                <section className="bg-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                    <h2 className="text-2xl font-semibold mb-4 text-blue-400">NOTABLE PROJECTS</h2>
                                     <div className="space-y-6">
                                         {projects.map((project, index) => (
                                             <motion.div
@@ -130,19 +130,19 @@ const CV = () => {
 
                         <div className="space-y-8">
                             <FadeInWhenVisible>
-                                <section className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <section className="bg-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
                                     <h2 className="text-2xl font-semibold mb-4 text-blue-400">SKILLS</h2>
                                     <ul className="list-disc list-inside text-gray-300">
                                         <li>Java, Python, JavaScript</li>
                                         <li>React.js, Next.js, Spring</li>
-                                        <li>AWS, MongoDB, MySQL</li>
+                                        <li>PostgresDB, MongoDB, MySQL</li>
                                         <li>GitHub, DigitalOcean, CloudFlare</li>
                                     </ul>
                                 </section>
                             </FadeInWhenVisible>
 
                             <FadeInWhenVisible>
-                                <section className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <section className="bg-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
                                     <h2 className="text-2xl font-semibold mb-4 text-blue-400">EDUCATION</h2>
                                     <div>
                                         <h3 className="text-xl font-medium text-gray-300">The Wheatley School</h3>
@@ -152,7 +152,7 @@ const CV = () => {
                             </FadeInWhenVisible>
 
                             <FadeInWhenVisible>
-                                <section className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <section className="bg-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
                                     <h2 className="text-2xl font-semibold mb-4 text-blue-400">LANGUAGES</h2>
                                     <ul className="text-gray-300">
                                         <li>Chinese: Native speaker</li>
@@ -162,7 +162,7 @@ const CV = () => {
                             </FadeInWhenVisible>
 
                             <FadeInWhenVisible>
-                                <section className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <section className="bg-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
                                     <h2 className="text-2xl font-semibold mb-4 text-blue-400">COURSES</h2>
                                     <ul className="space-y-2 text-gray-300">
                                         <li>
@@ -182,7 +182,7 @@ const CV = () => {
                             </FadeInWhenVisible>
 
                             <FadeInWhenVisible>
-                                <section className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <section className="bg-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
                                     <h2 className="text-2xl font-semibold mb-4 text-blue-400">LINKS</h2>
                                     <a href="https://kouyang.dev/" className="text-blue-400 hover:text-blue-300 transition-colors duration-300 block">Personal Website</a>
                                     <a href="https://www.instagram.com/kouyang.dev/" className="text-blue-400 hover:text-blue-300 transition-colors duration-300 block">Instagram</a>

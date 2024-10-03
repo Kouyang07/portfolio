@@ -2,22 +2,13 @@
 
 'use client'
 
-import React, { Suspense } from 'react';
-import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { NextSeo } from 'next-seo';
-import CardSkeleton from '@/components/projects/CardSkeleton';
-import { currentProjects, projects } from '@/data/projectsData';
 import Head from "next/head";
+import { currentProjects, projects } from '@/data/projectsData';
+import {CardSkeleton, ProjectCard} from "@/components/projects/ProjectCard";
+import {Suspense} from "react";
 
-const ProjectCard = dynamic(() => import('@/components/projects/ProjectCard'), {
-    loading: () => <CardSkeleton />,
-    ssr: false
-});
-const CurrentProjectCard = dynamic(() => import('@/components/projects/CurrentProjectCard'), {
-    loading: () => <CardSkeleton />,
-    ssr: false
-});
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -92,9 +83,7 @@ export default function ProjectsPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {currentProjects.map((project, index) => (
                             <motion.div key={index} variants={itemVariants}>
-                                <Suspense fallback={<CardSkeleton />}>
-                                    <CurrentProjectCard project={project} />
-                                </Suspense>
+                                <ProjectCard project={project} />
                             </motion.div>
                         ))}
                     </div>

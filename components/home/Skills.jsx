@@ -79,9 +79,12 @@ const Skills = () => {
     };
 
     return (
-        <section ref={ref} className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-gray-900 to-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 opacity-30 z-0"></div>
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmMDUiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzRmZDFjNTIwIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-5 z-10"></div>
+        <section
+            ref={ref}
+            className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-gray-900/30 to-black/30"
+        >
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 mix-blend-overlay z-0"></div>
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmMDUiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzRmZDFjNTIwIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-5 mix-blend-overlay z-10"></div>
 
             <motion.div
                 className="max-w-7xl mx-auto relative z-20"
@@ -89,10 +92,7 @@ const Skills = () => {
                 initial="hidden"
                 animate={controls}
             >
-                <motion.div
-                    className="mb-20 text-center"
-                    variants={itemVariants}
-                >
+                <motion.div className="mb-20 text-center" variants={itemVariants}>
                     <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-4">
                         Technical Proficiencies
                     </h2>
@@ -105,18 +105,17 @@ const Skills = () => {
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
                     variants={containerVariants}
                 >
-                    {skillCategories.map((category, categoryIndex) => (
+                    {skillCategories.map((category) => (
                         <motion.div
                             key={category.name}
                             variants={itemVariants}
                             className="glassmorphism p-6 shadow-lg"
                         >
-                            <h3 className="text-2xl font-semibold mb-6 text-teal-400">{category.name}</h3>
-                            <motion.div
-                                className="space-y-4"
-                                variants={containerVariants}
-                            >
-                                {category.skills.map((skill, skillIndex) => (
+                            <h3 className="text-2xl font-semibold mb-6 text-teal-400">
+                                {category.name}
+                            </h3>
+                            <motion.div className="space-y-4" variants={containerVariants}>
+                                {category.skills.map((skill) => (
                                     <motion.div
                                         key={skill.name}
                                         variants={itemVariants}
@@ -138,7 +137,9 @@ const Skills = () => {
                                                 >
                                                     {React.createElement(skill.icon, { color: '#ffffff' })}
                                                 </motion.div>
-                                                <h4 className="text-lg font-medium group-hover:text-teal-300 transition-colors duration-300">{skill.name}</h4>
+                                                <h4 className="text-lg font-medium group-hover:text-teal-300 transition-colors duration-300">
+                                                    {skill.name}
+                                                </h4>
                                             </div>
                                         </a>
                                     </motion.div>
