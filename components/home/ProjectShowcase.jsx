@@ -46,7 +46,7 @@ const ProjectShowcase = () => {
     }, [controls, inView]);
 
     return (
-        <section className="pt-20 pb-24 px-6 lg:px-12 relative overflow-hidden bg-black mt-32">
+        <section className="pt-20 pb-24 px-6 lg:px-12 relative overflow-hidden bg-black mt-32 rounded-2xl">
             <motion.div
                 className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 z-0"
                 animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}

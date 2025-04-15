@@ -1,12 +1,5 @@
 export const currentProjects = [
     {
-        name: "FIRST Robotics: Reefscape",
-        type: "Robotics",
-        tech: ["Java", "WPILib", "Lombok"],
-        description: "Team #2872's code for 2024-2025 FRC season, Reefscape",
-        github: "https://github.com/WheatleyRobotics/Reefscape"
-    },
-    {
         name: "BPLFMV Research",
         type: "AI/ML",
         tech: ["Python", "Pandas", "NumPy", "Scikit", "OpenCV", "MatplotLib", "PyTorch"],
@@ -23,6 +16,13 @@ export const currentProjects = [
 ];
 
 export const projects = [
+    {
+        name: "FIRST Robotics: Reefscape",
+        type: "Robotics",
+        tech: ["Java", "WPILib", "Lombok"],
+        description: "Team #2872's code for 2024-2025 FRC season, Reefscape",
+        github: "https://github.com/WheatleyRobotics/Reefscape"
+    },
     {
         name: "Personal Portfolio Website",
         type: "Web Development",
@@ -59,7 +59,7 @@ export const projects = [
         github: "https://github.com/Kouyang07/Monolith"
     },
     {
-        name: "FRC Robotics Crescendo",
+        name: "FIRST Robotics: Crescendo",
         type: "Robotics",
         tech: ["Java", "WPILib"],
         date: "2024-5-31",
@@ -83,7 +83,7 @@ export const projects = [
         github: "https://github.com/Kouyang07/Jarvis"
     },
     {
-        name: "FRC Robotics Charged Up",
+        name: "FIRST Robotics: Charged Up",
         type: "Robotics",
         tech: ["Java", "WPILib"],
         date: "2023-10-17",

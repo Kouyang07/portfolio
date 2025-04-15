@@ -79,7 +79,7 @@ export default function ProjectsPage() {
                     initial="hidden"
                     animate="visible"
                 >
-                    <h2 className="text-3xl font-semibold mb-6 text-white">Currently Working On</h2>
+                    <h2 className="text-3xl font-semibold mb-6 text-white">Work in Progress</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {currentProjects.map((project, index) => (
                             <motion.div key={index} variants={itemVariants}>
